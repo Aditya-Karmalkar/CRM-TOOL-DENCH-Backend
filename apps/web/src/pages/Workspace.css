@@ -1,0 +1,61 @@
+.workspace-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .workspace-grid { grid-template-columns: 1fr; }
+}
+
+.workspace-sync-list { display: flex; flex-direction: column; gap: 0.6rem; }
+
+.workspace-sync-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.65rem 0.75rem;
+  background: var(--surface-2);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}
+
+.workspace-sync-left { display: flex; align-items: center; gap: 0.6rem; min-width: 0; }
+
+.ws-status-dot {
+  width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+}
+.ws-dot-synced { background: var(--success); }
+.ws-dot-pending { background: var(--warning); }
+.ws-dot-failed { background: var(--danger); }
+
+.workspace-sync-subject {
+  font-size: 0.82rem; font-weight: 600; color: var(--text-dark);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px;
+}
+.workspace-sync-from { font-size: 0.72rem; color: var(--muted-light); margin-top: 1px; }
+
+.workspace-sync-right { display: flex; align-items: center; gap: 0.5rem; flex-shrink: 0; }
+
+.ws-badge {
+  font-size: 0.68rem; font-weight: 700; padding: 2px 7px; border-radius: 9999px; text-transform: capitalize;
+}
+.ws-badge-synced { background: var(--success-bg); color: var(--success); }
+.ws-badge-pending { background: var(--warning-bg); color: var(--warning); }
+.ws-badge-failed { background: var(--danger-bg); color: var(--danger); }
+
+.ws-health-bar-wrap { margin-bottom: 0.75rem; }
+.ws-health-bar {
+  height: 12px; border-radius: 9999px; overflow: hidden;
+  display: flex; background: var(--surface-2); border: 1px solid var(--border);
+}
+.ws-health-segment { height: 100%; transition: width 0.4s ease; }
+.ws-seg-synced { background: var(--success); }
+.ws-seg-pending { background: var(--warning); }
+.ws-seg-failed { background: var(--danger); }
+
+.ws-health-legend { display: flex; gap: 1rem; flex-wrap: wrap; }
+.ws-legend-item { display: flex; align-items: center; gap: 0.35rem; font-size: 0.75rem; color: var(--muted); font-weight: 600; }
+.ws-legend-dot { width: 8px; height: 8px; border-radius: 50%; }
