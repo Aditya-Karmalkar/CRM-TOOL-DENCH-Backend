@@ -17,6 +17,8 @@ import { WorkspacePage } from './pages/WorkspacePage';
 import { ActiveFiltersPage } from './pages/ActiveFiltersPage';
 import { FeedbackPage } from './pages/FeedbackPage';
 import { DealSignalsPage } from './pages/DealSignalsPage';
+import { PrivacyPage } from './pages/PrivacyPage';
+import { TermsPage } from './pages/TermsPage';
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
   const { user, loading } = useAuth();
@@ -29,6 +31,8 @@ export default function App() {
   return (
     <Routes>
       <Route path="/login" element={<LoginPage />} />
+      <Route path="/privacy" element={<PrivacyPage />} />
+      <Route path="/terms" element={<TermsPage />} />
       <Route path="/connect/gmail/callback" element={<GmailCallbackPage />} />
       <Route
         element={
