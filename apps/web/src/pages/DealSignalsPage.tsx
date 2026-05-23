@@ -286,7 +286,7 @@ export function DealSignalsPage() {
                                 <div className="signal-next-steps">
                                     <span className="signal-next-steps-label">Next steps</span>
                                     <ul>
-                                        {signal.nextSteps.map((step, i) => (
+                                        {signal.nextSteps.map((step: string, i: number) => (
                                             <li key={i}>{step}</li>
                                         ))}
                                     </ul>

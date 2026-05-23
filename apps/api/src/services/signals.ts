@@ -265,7 +265,7 @@ async function notifySlack(
         return;
     }
 
-    const typeLabel = payload.signalType.replace("_", " ").replace(/\b\w/g, c => c.toUpperCase());
+    const typeLabel = payload.signalType.replace("_", " ").replace(/\b\w/g, (c: string) => c.toUpperCase());
     const message = {
         text: `🔥 *Hot Signal Detected* — Score: ${payload.signalScore}/100`,
         blocks: [
